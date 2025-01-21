@@ -8,10 +8,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--background-color)",
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        accent: "var(--accent-color)",
+        text: "var(--text-color)",
+      },
+      fontFamily: {
+        'libre-baskerville': ['Libre Baskerville', 'serif'],
+        'source-sans': ['Source Sans 3', 'sans-serif'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 };
