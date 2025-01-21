@@ -16,10 +16,10 @@ const Navbar = () => {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Search a recipe or ingredients"
-                className="input input-bordered my-2 w-full bg-background text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Search a recipe"
+                className="input input-bordered my-2 w-full bg-background text-text focus:outline-none focus:ring-2 focus:ring-primary"
               />
-              <button className="absolute right-0 top-0 bottom-0 px-4 my-2 bg-primary text-white rounded-r-md">
+              <button className="absolute right-0 top-0 bottom-0 px-4 my-2 bg-primary text-text rounded-r-md">
                 Search
               </button>
             </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
+import FoodCard from "./components/FoodCard";
 
 export default function Home() {
   return (
@@ -51,6 +52,18 @@ export default function Home() {
         </div>
 
       </main>
+      <section className="min-h-screen p-6 md:p-20">
+        <h5 className="text-2xl sm:text-6xl font-libre-baskerville text-center mb-6 md:mb-10">
+          Try Some <span className="text-accent">Popular Recipes</span>
+        </h5>
+        <div className="flex flex-wrap justify-center gap-6 md:gap-10 overflow-x-auto p-4 md:p-10">
+          <FoodCard />
+          <FoodCard />
+          <FoodCard />
+          <FoodCard />
+        </div>
+      </section>
+
     </div>
   );
 }

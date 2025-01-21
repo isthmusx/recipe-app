@@ -10,7 +10,6 @@
     --accent-color: #403d39;
 }
 
-/* Dark mode 
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #eb5e28;
@@ -20,7 +19,7 @@
     --accent-color: #ccc5b9;
   }
 }
-*/
+
 body {
   color: var(--text-color);
   background: var(--background-color);
