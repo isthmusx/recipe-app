@@ -30,7 +30,13 @@ const FoodCard = () => {
   }, []);
 
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <div className="p-10">
+        <div >
+          <CardSkeleton />
+        </div>
+      </div>
+    );
   }
 
   if (loading) {

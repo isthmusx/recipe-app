@@ -7,14 +7,14 @@ export default function Home() {
     <div className="m-auto">
       <Navbar />
       {/* Main container with padding to prevent overlap with navbar */}
-      <main className="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-screen pt-16 p-5">
+      <main className="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-screen pt-0 p-5 sm:pt-16 md:pt-16">
         <div className="flex flex-col items-left justify-center gap-10 pl-0 md:pl-16 sm:pl-16 mx-10 w-4/5">
           {/* Left Side Content */}
           <h1 className="text-4xl font-semibold font-libre-baskerville text-center md:text-left mb-4 sm:text-6xl">
             Discover, cook, and savor your favorite recipes <span className="text-accent">– all in one place.</span> 
           </h1>
 
-          <h2 className="text-2xl text-left md:text-left mb-6">
+          <h2 className="text-xl text-left md:text-left mb-6 sm:text-2xl md:text-2xl">
             Whether you&apos;re looking for quick meals, healthy options, or indulgent treats, Crave has something for every craving. 
             Get inspired with new flavors, step-by-step guides, and creative twists on classic dishes.
           </h2>

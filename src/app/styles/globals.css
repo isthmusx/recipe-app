@@ -31,3 +31,10 @@ html {
   overflow-x: hidden;
   background-color: var(--background-color);
 }
+
+.skeleton {
+  background: var(--accent-color);
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+  background-size: 200% 200%;
+  animation: skeleton 1.5s infinite;
+}
