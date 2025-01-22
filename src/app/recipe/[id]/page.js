@@ -1,3 +1,4 @@
+import Navbar from "@/app/components/Navbar";
 import { fetchRecipeById } from "../../utils/fetchRecipes"; // Import from the utils folder
 import Image from "next/image";
 
@@ -21,7 +22,11 @@ export default async function RecipeDetail({ params }) {
   }
 
   return (
-    <div className="m-auto p-5 min-h-screen">
+    <div className="m-auto min-h-screen">
+      <Navbar />
+      <div >
+        
+      </div>
       <h1>{recipe.title}</h1>
       <Image
         src={recipe.image}

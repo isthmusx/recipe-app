@@ -2,10 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import { fetchRandomRecipe } from '../utils/fetchRecipes';
 import DOMPurify from 'dompurify';
+import { useRouter } from 'next/navigation';
+import CardSkeleton from './skeletons/CardSkeleton';
+
 
 const FoodCard = () => {
+  const router = useRouter();
   const [recipe, setRecipe] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getRandomRecipe = async () => {
@@ -16,6 +21,8 @@ const FoodCard = () => {
       } catch (error) {
         console.error('Error fetching random recipe:', error);
         setError('Failed to fetch recipe');
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -26,14 +33,24 @@ const FoodCard = () => {
     return <div>{error}</div>;
   }
 
-  if (!recipe) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div className="p-10">
+        <div >
+          <CardSkeleton />
+        </div>
+      </div>
+    );
   }
 
   const sanitizedSummary = DOMPurify.sanitize(recipe.summary);
 
+  const handleCardClick = () => {
+    router.push(`/recipe/${recipe.id}`); // Navigate to the recipe page with the recipe ID
+  };
+
   return (
-    <div className="w-full sm:w-80 md:w-96 lg:w-1/5">
+    <div className="w-full sm:w-80 md:w-96 lg:w-1/5 hover:cursor-pointer hover:scale-105 duration-300" onClick={handleCardClick}>
         <div className="card bg-secondary shadow-xl h-96 md:h-[400px]">
             <figure>
             <img
