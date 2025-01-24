@@ -10,6 +10,7 @@ export default async function RecipeDetail({ params }) {
 
   try {
     recipe = await fetchRecipeById(id); // Fetch recipe data by ID
+    console.log(recipe);
   } catch (err) {
     error = err.message; // Handle any errors during the fetch
   }
@@ -19,7 +20,7 @@ export default async function RecipeDetail({ params }) {
   }
 
   if (!recipe) {
-    return <p>Recipe not found.</p>; // Show message if recipe data is not found
+    return <Error />;
   }
 
   return (
@@ -39,7 +40,11 @@ export default async function RecipeDetail({ params }) {
         <div className="flex justify-between mx-auto w-full text-center p-5 max-w-2xl">
           <div>
             <p className="text-xl">Cusine</p>
-            <h3 className="text-lg font-bold text-primary">{recipe.cusine ? recipe.cusine : "None"}</h3>
+            <h3 className="text-lg font-bold text-primary">
+              {recipe?.cuisines?.join(", ") || "None"}
+            </h3>
+
+
           </div>
 
           <div>
@@ -83,22 +88,22 @@ export default async function RecipeDetail({ params }) {
           <div className="flex justify-between w-full text-center">
             <div>
               <p className="text-xl">Calories</p>
-              <h3 className="text-lg font-bold text-primary">{recipe.maxCalories}10</h3>
+              <h3 className="text-lg font-bold text-primary">{recipe.nutrition.nutrients.find(nutrient => nutrient.name === 'Calories')?.amount}</h3>
             </div>
 
             <div>
               <p className="text-xl">Protein</p>
-              <h3 className="text-lg font-bold text-primary">{recipe.maxProtein}10</h3>
+              <h3 className="text-lg font-bold text-primary">{recipe.nutrition.nutrients.find(nutrient => nutrient.name === 'Protein')?.amount}</h3>
             </div>
 
             <div>
               <p className="text-xl">Carbs</p>
-              <h3 className="text-lg font-bold text-primary">{recipe.maxCarbs}10</h3>
+              <h3 className="text-lg font-bold text-primary">{recipe.nutrition.nutrients.find(nutrient => nutrient.name === 'Carbohydrates')?.amount}</h3>
             </div>
 
             <div>
               <p className="text-xl">Fat</p>
-              <h3 className="text-lg font-bold text-primary">{recipe.maxFat}10</h3>
+              <h3 className="text-lg font-bold text-primary">{recipe.nutrition.nutrients.find(nutrient => nutrient.name === 'Fat')?.amount}</h3>
             </div>
           </div>
         </div>
