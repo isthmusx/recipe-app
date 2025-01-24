@@ -60,11 +60,11 @@ export default async function RecipeDetail({ params }) {
 
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-text py-5">Ingredients</h2>
-          <ul className="list-none text-white">
+          <ul className="list-none text-text">
             {recipe.extendedIngredients.map((ingredient) => (
               <li
                 key={ingredient.id}
-                className="text-lg text-white relative pl-5 mb-4 before:content-['\2022'] before:text-primary before:absolute before:left-0"
+                className="text-lg text-text relative pl-5 mb-4 before:content-['\2022'] before:text-primary before:absolute before:left-0"
               >
                 {ingredient.original}
               </li>
@@ -74,9 +74,9 @@ export default async function RecipeDetail({ params }) {
 
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-text py-5">Instructions:</h2>
-          <ul className="list-decimal text-white pl-5">
+          <ul className="list-decimal text-text pl-5">
             {recipe.analyzedInstructions[0].steps.map((step) => (
-              <li key={step.number} className="text-lg text-white mb-4">
+              <li key={step.number} className="text-lg text-text mb-4">
                 {step.step}
               </li>
             ))}
