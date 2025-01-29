@@ -38,3 +38,27 @@ html {
   background-size: 200% 200%;
   animation: skeleton 1.5s infinite;
 }
+
+.hover-effect {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.hover-effect::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-effect:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

@@ -1,10 +1,12 @@
 'use client';
-import React from 'react';
+import React, {useState} from 'react';
 import { useRouter } from 'next/navigation';
 import DOMPurify from 'dompurify';
+import LoadingSpinner from './LoadingSpinner';
 
 const FoodCard = ({ recipe }) => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   if (!recipe) {
     return null; // If no recipe is provided, render nothing
@@ -13,6 +15,7 @@ const FoodCard = ({ recipe }) => {
   const sanitizedSummary = DOMPurify.sanitize(recipe.summary);
 
   const handleCardClick = () => {
+    setLoading(true);
     router.push(`/recipe/${recipe.id}`); // Navigate to the recipe page with the recipe ID
   };
 
@@ -37,6 +40,7 @@ const FoodCard = ({ recipe }) => {
           ></p>
         </div>
       </div>
+      {loading && <LoadingSpinner />}
     </div>
 
 

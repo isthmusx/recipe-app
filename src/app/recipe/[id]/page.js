@@ -10,7 +10,6 @@ export default async function RecipeDetail({ params }) {
 
   try {
     recipe = await fetchRecipeById(id); // Fetch recipe data by ID
-    console.log(recipe);
   } catch (err) {
     error = err.message; // Handle any errors during the fetch
   }
@@ -20,7 +19,7 @@ export default async function RecipeDetail({ params }) {
   }
 
   if (!recipe) {
-    return <Error />;
+    return <Error />; 
   }
 
   return (
