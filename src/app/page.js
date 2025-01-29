@@ -4,6 +4,7 @@ import React from 'react';
 import ExploreCuisinePage from "./components/pages/ExploreCuisinePage";
 import MainHeroPage from "./components/pages/MainHeroPage";
 import PopularRecipePage from "./components/pages/PopularRecipePage";
+import Footer from "./components/Footer";
 
 export default function Home() {
 
@@ -12,13 +13,19 @@ export default function Home() {
     <div className="m-auto">
       <Navbar />
 
-      {/* Main container */}
-      <MainHeroPage />
+      <div id="home" >
+        <MainHeroPage />
+      </div>
 
-      {/* Try Popular Recipes Section */}
-      <PopularRecipePage />
+      <div id="recipes" >
+        <PopularRecipePage />
+      </div>
+      
+      <div id="cuisines" >
+        <ExploreCuisinePage />
+      </div>
 
-      <ExploreCuisinePage />
+      <Footer />
 
     </div>
   );

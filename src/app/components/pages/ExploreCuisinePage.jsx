@@ -24,7 +24,7 @@ const ExploreCuisinePage = () => {
             "Mexican", "Middle Eastern", "Nordic", "Southern", "Spanish", "Thai", "Vietnamese"
           ].map((cuisine) => (
             <a key={cuisine} onClick={() => handleCuisineClick(cuisine)}  >
-              <span className="hover-effect p-2">{cuisine}</span>
+              <span className="hover-effect p-2 cursor-pointer">{cuisine}</span>
             </a>
           ))}
         </div>
